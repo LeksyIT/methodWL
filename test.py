@@ -19,14 +19,14 @@ def func(r, t):
 
 
 h = 0.001
-emps1 = 5
+emps1 = 10
 alpha1 = 2.5
-emps2 = 2
+emps2 = 4
 alpha2 = 1
 tpoints = np.arange(0, 30, h)
 x_0 = 2
 y_0 = 2
-for i in range(1, 7):
+for i in range(1, 11):
     xpoints, ypoints = [], []
     r = np.array([x_0 + i, y_0 + i], float)
     for t in tpoints:
@@ -34,7 +34,7 @@ for i in range(1, 7):
         ypoints.append(r[1])
         r += rk4(r, t, h)
     plt.plot(xpoints, ypoints)
-    plt.scatter(2, 2, color='orange', s=40, marker='o')
+    plt.scatter(4, 4, color='orange', s=40, marker='o')
 plt.xlabel("Time")
 plt.ylabel("Population")
 plt.title("Lotka-Volterra Model")
